@@ -1,4 +1,4 @@
-# N-Dimensional-MEPhIst-Repository
+# N-Dimensional-MEPhIst-In-Vacuum
 > "В целя́х природы обузданья,  
 > В целя́х рассеять неученья Тьму  
 > Берём картину мирозданья – да!  
