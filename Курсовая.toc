@@ -1,0 +1,8 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}\IeC {\CYRP }\IeC {\cyro }\IeC {\cyrs }\IeC {\cyrt }\IeC {\cyra }\IeC {\cyrn }\IeC {\cyro }\IeC {\cyrv }\IeC {\cyrk }\IeC {\cyra } \IeC {\cyrz }\IeC {\cyra }\IeC {\cyrd }\IeC {\cyra }\IeC {\cyrch }}{3}{}%
+\contentsline {subsection}{\numberline {1.1}\IeC {\CYRZ }\IeC {\cyra }\IeC {\cyrd }\IeC {\cyra }\IeC {\cyrch }\IeC {\cyra } 1}{3}{}%
+\contentsline {subsection}{\numberline {1.2}\IeC {\CYRZ }\IeC {\cyra }\IeC {\cyrd }\IeC {\cyra }\IeC {\cyrch }\IeC {\cyra } 2}{3}{}%
+\contentsline {subsection}{\numberline {1.3}\IeC {\CYRZ }\IeC {\cyra }\IeC {\cyrd }\IeC {\cyra }\IeC {\cyrch }\IeC {\cyra } 3}{3}{}%
+\contentsline {section}{\numberline {2}\IeC {\CYRZ }\IeC {\cyra }\IeC {\cyrd }\IeC {\cyra }\IeC {\cyrch }\IeC {\cyra } 1}{4}{}%
+\contentsline {section}{\numberline {3}\IeC {\CYRZ }\IeC {\cyra }\IeC {\cyrd }\IeC {\cyra }\IeC {\cyrch }\IeC {\cyra } 2}{5}{}%
+\contentsline {section}{\numberline {4}\IeC {\CYRZ }\IeC {\cyra }\IeC {\cyrd }\IeC {\cyra }\IeC {\cyrch }\IeC {\cyra } 3}{6}{}%
