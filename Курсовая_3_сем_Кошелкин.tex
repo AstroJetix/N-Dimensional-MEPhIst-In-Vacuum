@@ -42,7 +42,47 @@
 	\newpage
 	
 	\section{Задача 1}
-	
+	\subsection{Электродинамика с монополями}
+	Как известно, классические уравнения Максвелла несимметричны относительно обмена электрических и магнитных полей. Это, во многомо, связано с отсутствием магнитных зарядов. Однако существуют различные теории, которые предполагают их существование и позволяют исследовать так называемую электродинамику с монополями, чему и будет посвящен этот раздел. 
+
+	Сперва следует договориться об обозначениях. Работать будем в системе СГС. К обозначениям будем добавлять индексы $\vec E$ или $\vec B$, в зависимости от того, с чем связан соответствующий объект (конкретная связь обычно будет понятна из контекста). 
+
+	Начнем с получения новых уравнений Максвелла, а также преобразований обмена полей. Выпишем, для начала, классические уравнения Максвелла, с учетом соглашений об обозначениях: 
+$$
+\begin{aligned} 
+\nabla \cdot \vec E & = 4\pi\rho_{\vec E} \\
+\nabla \cdot \vec B & = 0 \\
+\nabla \times \vec E & = -\frac{1}{c}\frac{\partial \vec B}{\partial t} \\
+\nabla \times \vec B & = \frac{4\pi}{c}\vec j_{\vec E}+\frac{1}{c}\frac{\partial \vec E}{\partial t} \\
+\end{aligned}
+$$
+Очевидно, что для получения симметричных уравнений, во второе из них необходимо добавить член, связанный с плотностью магнитных зарядов $\rho_{\vec B}$, а в третье \textbf{---} с током магнитных зарядов $\vec j_{\vec B}$. После их добавления получается следующая система уравнений:
+$$
+\begin{aligned} 
+\nabla \cdot \vec E & = 4\pi\rho_{\vec E} \\
+\nabla \cdot \vec B & =4\pi\rho_{\vec B} \\
+\nabla \times \vec E & = -\frac{4\pi}{c}\vec j_{\vec B}-\frac{1}{c}\frac{\partial \vec B}{\partial t} \\
+\nabla \times \vec B & = \frac{4\pi}{c}\vec j_{\vec E}+\frac{1}{c}\frac{\partial \vec E}{\partial t} \\
+\end{aligned}
+$$
+При этом минус в третьем уравнении необходим из-за вида искомой симметрии. Полученная система уравнений оказывается симметрична относительно следующего преобразования:
+$$
+\begin{aligned} 
+\vec E & \rightarrow \vec B \\
+\vec B & \rightarrow -\vec E \\
+\rho_{\vec E} & \rightarrow \rho_{\vec B} \\
+\rho_{\vec B} & \rightarrow -\rho_{\vec E} \\
+\vec j_{\vec E} & \rightarrow \vec j_{\vec B} \\
+\vec j_{\vec B} & \rightarrow -\vec j_{\vec E} \\
+\end{aligned}
+$$
+Опираясь на эти преобразования и на известные формулы классической электродинамики, можно получить следующие выражения:
+$$\frac{\partial \rho_{\vec E}}{\partial t}+\nabla\cdot\vec j_{\vec E}=0 \rightarrow \frac{\partial \rho_{\vec B}}{\partial t}+\nabla\cdot\vec j_{\vec B}=0$$
+$$\varphi_{\vec E} = \frac{q_{\vec E}}{r} \rightarrow \varphi_{\vec B} = \frac{q_{\vec B}}{r} $$
+$$\vec E = \frac{q_{\vec E}}{r^3}\vec r \rightarrow \vec B = \frac{q_{\vec B}}{r^3}\vec r$$
+$$\vec B=\frac{q_{\vec E}}{c}\frac{\vec v \times(\vec r - \vec{ r^\prime})}{|\vec r - \vec {r^\prime}|^3} \rightarrow \vec E=-\frac{q_{\vec B}}{c}\frac{\vec v \times(\vec r - \vec{ r^\prime})}{|\vec r - \vec {r^\prime}|^3}$$
+$$\vec F_{\vec E}=q_{\vec E}(\vec E + \frac{1}{c}\vec v \times \vec B) \rightarrow \vec F_{\vec B}=q_{\vec B}(\vec B - \frac{1}{c}\vec v \times \vec E)$$
+	\subsection{Движение диона в различных полях}
 	\newpage
 	
 	\section{Задача 2}
