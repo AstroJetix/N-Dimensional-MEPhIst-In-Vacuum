@@ -5,6 +5,7 @@
 \setpapersize{A4}
 \setmarginsrb{2cm}{1.5cm}{1cm}{1.5cm}{0pt}{0mm}{0pt}{13mm}
 \usepackage{indentfirst}
+\usepackage{romannum}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage[dvips]{graphicx}
@@ -44,47 +45,192 @@
 	\section{Задача 1}
 	\subsection{Электродинамика с монополями}
 	Как известно, классические уравнения Максвелла несимметричны относительно обмена электрических и магнитных полей. Это, во многомо, связано с отсутствием магнитных зарядов. Однако существуют различные теории, которые предполагают их существование и позволяют исследовать так называемую электродинамику с монополями, чему и будет посвящен этот раздел. 
-
-	Сперва следует договориться об обозначениях. Работать будем в системе СГС. К обозначениям будем добавлять индексы $\vec E$ или $\vec B$, в зависимости от того, с чем связан соответствующий объект (конкретная связь обычно будет понятна из контекста). 
-
-	Начнем с получения новых уравнений Максвелла, а также преобразований обмена полей. Выпишем, для начала, классические уравнения Максвелла, с учетом соглашений об обозначениях: 
-$$
-\begin{aligned} 
-\nabla \cdot \vec E & = 4\pi\rho_{\vec E} \\
-\nabla \cdot \vec B & = 0 \\
-\nabla \times \vec E & = -\frac{1}{c}\frac{\partial \vec B}{\partial t} \\
-\nabla \times \vec B & = \frac{4\pi}{c}\vec j_{\vec E}+\frac{1}{c}\frac{\partial \vec E}{\partial t} \\
-\end{aligned}
-$$
-Очевидно, что для получения симметричных уравнений, во второе из них необходимо добавить член, связанный с плотностью магнитных зарядов $\rho_{\vec B}$, а в третье \textbf{---} с током магнитных зарядов $\vec j_{\vec B}$. После их добавления получается следующая система уравнений:
-$$
-\begin{aligned} 
-\nabla \cdot \vec E & = 4\pi\rho_{\vec E} \\
-\nabla \cdot \vec B & =4\pi\rho_{\vec B} \\
-\nabla \times \vec E & = -\frac{4\pi}{c}\vec j_{\vec B}-\frac{1}{c}\frac{\partial \vec B}{\partial t} \\
-\nabla \times \vec B & = \frac{4\pi}{c}\vec j_{\vec E}+\frac{1}{c}\frac{\partial \vec E}{\partial t} \\
-\end{aligned}
-$$
-При этом минус в третьем уравнении необходим из-за вида искомой симметрии. Полученная система уравнений оказывается симметрична относительно следующего преобразования:
-$$
-\begin{aligned} 
-\vec E & \rightarrow \vec B \\
-\vec B & \rightarrow -\vec E \\
-\rho_{\vec E} & \rightarrow \rho_{\vec B} \\
-\rho_{\vec B} & \rightarrow -\rho_{\vec E} \\
-\vec j_{\vec E} & \rightarrow \vec j_{\vec B} \\
-\vec j_{\vec B} & \rightarrow -\vec j_{\vec E} \\
-\end{aligned}
-$$
-Опираясь на эти преобразования и на известные формулы классической электродинамики, можно получить следующие выражения:
-$$\frac{\partial \rho_{\vec E}}{\partial t}+\nabla\cdot\vec j_{\vec E}=0 \rightarrow \frac{\partial \rho_{\vec B}}{\partial t}+\nabla\cdot\vec j_{\vec B}=0$$
-$$\varphi_{\vec E} = \frac{q_{\vec E}}{r} \rightarrow \varphi_{\vec B} = \frac{q_{\vec B}}{r} $$
-$$\vec E = \frac{q_{\vec E}}{r^3}\vec r \rightarrow \vec B = \frac{q_{\vec B}}{r^3}\vec r$$
-$$\vec B=\frac{q_{\vec E}}{c}\frac{\vec v \times(\vec r - \vec{ r^\prime})}{|\vec r - \vec {r^\prime}|^3} \rightarrow \vec E=-\frac{q_{\vec B}}{c}\frac{\vec v \times(\vec r - \vec{ r^\prime})}{|\vec r - \vec {r^\prime}|^3}$$
-$$\vec F_{\vec E}=q_{\vec E}(\vec E + \frac{1}{c}\vec v \times \vec B) \rightarrow \vec F_{\vec B}=q_{\vec B}(\vec B - \frac{1}{c}\vec v \times \vec E)$$
-	\subsection{Движение диона в различных полях}
-	\newpage
 	
+	Сперва следует договориться об обозначениях. Работать будем в системе СГС. К обозначениям будем добавлять индексы $e$ или $\mu$, в зависимости от того, с чем связан соответствующий объект (конкретная связь обычно будет понятна из контекста). 
+	
+	Начнем с получения новых уравнений Максвелла, а также преобразований обмена полей. Выпишем, для начала, классические уравнения Максвелла, с учетом соглашений об обозначениях: 
+	$$
+	\begin{aligned} 
+		\nabla \cdot \vec E & = 4\pi\rho_{e} \\
+		\nabla \cdot \vec B & = 0 \\
+		\nabla \times \vec E & = -\frac{1}{c}\frac{\partial \vec B}{\partial t} \\
+		\nabla \times \vec B & = \frac{4\pi}{c}\vec j_{e}+\frac{1}{c}\frac{\partial \vec E}{\partial t} \\
+	\end{aligned}
+	$$
+	Очевидно, что для получения симметричных уравнений, во второе из них необходимо добавить член, связанный с плотностью магнитных зарядов $\rho_{\mu}$, а в третье \textbf{---} с током магнитных зарядов $\vec j_{\mu}$. После их добавления получается следующая система уравнений:
+	$$
+	\begin{aligned} 
+		\nabla \cdot \vec E & = 4\pi\rho_{e} \\
+		\nabla \cdot \vec B & =4\pi\rho_{\mu} \\
+		\nabla \times \vec E & = -\frac{4\pi}{c}\vec j_{\mu}-\frac{1}{c}\frac{\partial \vec B}{\partial t} \\
+		\nabla \times \vec B & = \frac{4\pi}{c}\vec j_{e}+\frac{1}{c}\frac{\partial \vec E}{\partial t} \\
+	\end{aligned}
+	$$
+	При этом минус в третьем уравнении необходим из-за вида искомой симметрии. Полученная система уравнений оказывается симметрична относительно следующего преобразования:
+	$$
+	\begin{aligned} 
+		\vec E & \rightarrow \vec B \\
+		\vec B & \rightarrow -\vec E \\
+		\rho_{e} & \rightarrow \rho_{\mu} \\
+		\rho_{\mu} & \rightarrow -\rho_{e} \\
+		\vec j_{e} & \rightarrow \vec j_{\mu} \\
+		\vec j_{\mu} & \rightarrow -\vec j_{e} \\
+	\end{aligned}
+	$$
+	Опираясь на эти преобразования и на известные формулы классической электродинамики, можно получить следующие выражения:
+	$$\frac{\partial \rho_{e}}{\partial t}+\nabla\cdot\vec j_{e}=0 \rightarrow \frac{\partial \rho_{\mu}}{\partial t}+\nabla\cdot\vec j_{\mu}=0$$
+	$$\varphi_{e} = \frac{q_{e}}{r} \rightarrow \varphi_{\mu} = \frac{q_{\mu}}{r} $$
+	$$\vec E = \frac{q_{e}}{r^3}\vec r \rightarrow \vec B = \frac{q_{\mu}}{r^3}\vec r$$
+	$$\vec B=\frac{q_{e}}{c}\frac{\vec v \times(\vec r - \vec{ r^\prime})}{|\vec r - \vec {r^\prime}|^3} \rightarrow \vec E=-\frac{q_{\mu}}{c}\frac{\vec v \times(\vec r - \vec{ r^\prime})}{|\vec r - \vec {r^\prime}|^3}$$
+	$$\vec F_{e}=q_{e}(\vec E + \frac{1}{c}\vec v \times \vec B) \rightarrow \vec F_{\mu}=q_{\mu}(\vec B - \frac{1}{c}\vec v \times \vec E)$$
+	
+	\newpage
+	\subsection{Движение диона в различных полях}
+		\noindent Как следствие \textbf{симметризации} уравнений Максвелла, осуществлённой в предыдущем разделе задачи путём определения некоторой модели "\textbf{монополя}"\, (частицы, являющейся независимым \textbf{источником} центрально-симметричного \textbf{магнитного поля}), имеет место рассмотрение модели "\textbf{диона}"\, (частицы $m$, обладающей не только собственным \textbf{электрическим} $q_{e}$, но и собственным \textbf{магнитным} зарядом $q_{\mu}$). \\
+		
+		\noindent \textbf{Дион} можно поочерёдно поместить в однородное \textbf{электрическое}, однородное \textbf{магнитное} поле, а также в поле, представляющее \textbf{суперпозицию} оных полей, \textbf{скрещенных} под \textbf{прямым} углом в пространстве, и рассмотреть особенности его динамики. \\
+		
+		\noindent Рассмотрим \textbf{общее уравнение динамики диона} (в системе СГСЭ): \\
+		
+		\begin{math}
+			\begin{aligned}
+				& m\dot{\vec{v}} = q_{e}\left(\vec{E} + \frac{1}{c} \cdot \left[\vec{v} \times \vec{B}\right]\right) + q_{\mu}\left(\vec{B} - \frac{1}{c} \cdot \left[\vec{v} \times \vec{E}\right]\right),\; \text{где:} \\
+				& \vec{v} = \{v_{x},\, v_{y},\, v_{z}\} - \text{вектор скорости частицы}; \\
+				& \vec{E} = \{E_{x},\, E_{y},\, E_{z}\} - \text{вектор электрической напряжённости}; \\
+				& \vec{B} = \{B_{x},\, B_{y},\, B_{z}\} - \text{вектор магнитной индукции}.
+			\end{aligned}
+		\end{math} \\\\
+		
+		\noindent Рассмотрим движение диона только в однородном электрическом поле $(\vec{B} = \vec{0})$, задающемся в пространстве вектором электрической напряжённости вида $\vec{E} = \{E_{x},\, 0,\, 0\}$. \\
+		
+		\noindent Запишем уравнение динамики для данного случая: \\
+		
+		\begin{math}
+			\begin{aligned}
+				& m\dot{\vec{v}} = E_{x}\Big(q_{e} - q_{\mu}\left(v_{z}\vec{e}_{y} - v_{y}\vec{e}_{z}\right)\Big)
+			\end{aligned}
+		\end{math} \\
+		
+		\noindent Рассмотрим следующую систему линейных дифференциальных уравнений $\Romannum{2}$-го порядка относительно времени $t$: \\
+		
+		\begin{math}
+			(\textasteriskcentered) \left\{
+			\begin{aligned}
+				& \ddot{x} = \frac{q_{e}E_{x}}{m} \\\\
+				& \ddot{y} = -\frac{q_{\mu}E_{x}}{mc} \cdot \dot{z} \\\\
+				& \ddot{z} = \frac{q_{\mu}E_{x}}{mc} \cdot \dot{y}
+			\end{aligned}
+			\right.
+		\end{math}
+		
+		\newpage
+		\noindent Произведём переобозначение вышеописанных групп констант: \\
+		
+		\begin{math}
+			\begin{aligned}
+				& \beta_{1} = \frac{q_{e}E_{x}}{m}, \quad \omega_{E} = \frac{q_{\mu}E_{x}}{mc}
+			\end{aligned}
+		\end{math} \\
+		
+		\noindent Перепишем систему уравнений $(\textasteriskcentered)$ следующим образом: \\
+		
+		\begin{math}
+			\left\{
+			\begin{aligned}
+				& \ddot{x} = \beta_{1} \quad && (1) \\\\
+				& \ddot{y} = -\omega_{E} \cdot \dot{z} \quad && (2) \\\\
+				& \ddot{z} = \omega_{E} \cdot \dot{y} \quad && (3)
+			\end{aligned}
+			\right.
+		\end{math} \\\\
+		
+		\noindent Найдём решение уравнения $(1)$, дважды его проинтегрировав: \\
+		
+		\begin{math}
+			\begin{aligned}
+				& x = \frac{\beta_{1}t^{2}}{2} + C_{1}t + C_{2}, \quad \{C_{1}, C_{2}\} = const \quad && (4)
+			\end{aligned}
+		\end{math} \\\\
+		
+		\noindent Далее, найдём решения уравнений $(2)$ и $(3)$. \\
+		
+		\noindent При выражении из уравнения $(2)$ $\dot{z}$ и подстановке его в уравнение $(3)$, получим следующего вида линейное дифференциальное уравнение $\Romannum{3}$-го порядка относительно $t$: \\
+		
+		\begin{math}
+			\begin{aligned}
+				& \dddot{y} + \omega_{E}^{2} \cdot \dot{y} = 0 \quad && (5)
+			\end{aligned}
+		\end{math} \\
+		
+		\noindent Произведём следующую замену $\dot{y} = \xi$ и перепишем уравнение $(5)$ в следующем виде: \\
+		
+		\begin{math}
+			\begin{aligned}
+				& \ddot{\xi} + \omega_{E}^{2} \cdot \xi = 0 \quad && (6)
+			\end{aligned}
+		\end{math} \\
+		
+		\noindent Получили дифференциальное уравнение вида $\left\{F(\xi,\, \ddot{\xi}) = 0\right\}$ с возможностью понижения порядка. \\
+		
+		\noindent Воспользуемся данной возможностью --- произведём следующие замены: \\
+		
+		\begin{math}
+			\begin{aligned}
+				& \dot{\xi} = p(\xi), \quad \ddot{\xi} = p(\xi) \cdot p'(\xi)
+			\end{aligned}
+		\end{math} \\
+		
+		\noindent В таком случае, уравнение $(6)$ можно переписать следующим образом: \\
+		
+		\begin{math}
+			\begin{aligned}
+				& p' + \frac{\omega_{E}^{2} \cdot \xi}{p} = 0
+			\end{aligned}
+		\end{math} \\
+		
+		\noindent Решим полученное уравнение методом разделения переменных --- найдём функцию $p(\xi) = \dot{\xi}$: \\
+		
+		\begin{math}
+			\begin{aligned}
+				& \frac{dp}{d\xi} = - \frac{\omega_{E}^{2} \cdot \xi}{p} \\\\
+				& pdp = - \omega_{E}^{2} \cdot \xi d\xi \\\\
+				& p = \pm \sqrt{\widehat{C}_{1} - \omega_{E}^{2} \xi^{2}}, \quad \widehat{C}_{1} = const
+			\end{aligned}
+		\end{math} \\\\
+		
+		\noindent Таким образом, получили функцию $\dot{\xi} = \pm \sqrt{\widehat{C}_{1} - \omega_{E}^{2} \xi^{2}},\; \widehat{C}_{1} = const$. \\
+		
+		\noindent Продолжим решение уравнения --- найдём аналогичным способом функции $\xi(t) = \dot{y}$ и $y(t)$ соответственно: \\
+		
+		\begin{math}
+			\begin{aligned}
+				& \dot{\xi} = \pm \sqrt{\widehat{C}_{1} - \omega_{E}^{2} \xi^{2}} \\\\
+				& \pm \frac{d\xi}{\sqrt{\widehat{C}_{1} - \omega_{E}^{2} \xi^{2}}} = dt \\\\
+				& \pm \arcsin{\left(\frac{\omega_{E}}{\sqrt{\widehat{C}_{1}}}\,\xi\right)} = \omega_{E}t + \widehat{C}_{2}, \quad \widehat{C}_{2} = const  \\\\
+				& \frac{\omega_{E}}{\sqrt{\widehat{C}_{1}}}\,\xi = \pm \sin{(\omega_{E}t + \widehat{C}_{2})} \\\\
+				& \xi = \pm \frac{\sqrt{\widehat{C}_1}}{\omega_{E}} \sin{(\omega_{E}t + \widehat{C}_{2})} \\\\
+				& \dot{y} = \pm \frac{\sqrt{\widehat{C}_1}}{\omega_{E}} \sin{(\omega_{E}t + \widehat{C}_{2})} \\\\
+			\end{aligned}
+		\end{math}
+		
+		\begin{math}
+			\begin{aligned}
+				& dy = \pm \frac{\sqrt{\widehat{C}_1}}{\omega_{E}} \sin{(\omega_{E}t + \widehat{C}_{2})} dt \\\\
+				& y = \pm \frac{\sqrt{\widehat{C}_1}}{\omega_{E}^{2}} \cos{(\omega_{E}t + \widehat{C}_{2})} + \widehat{C}_{3}, \quad \widehat{C}_{3} = const
+			\end{aligned}
+		\end{math} \\\\
+		
+		\noindent В результате получили итоговое решение дифференциального уравнения $(5)$: \\
+		
+		\begin{math}
+			\begin{aligned}
+				& y = \pm \frac{\sqrt{\widehat{C}_1}}{\omega_{E}^{2}} \cos{(\omega_{E}t + \widehat{C}_{2})} + \widehat{C}_{3}, \quad \{\widehat{C}_{1},\, \widehat{C}_{2},\, \widehat{C}_{3}\} = const
+			\end{aligned}
+		\end{math} \\\\
+		
+		\noindent Подставим получившееся уравнение $y = y(t)$ в уравнение $(3)$ и найдём уравнение $z = z(t)$:
+		
+	\newpage
 	\section{Задача 2}
 	
 	\newpage
